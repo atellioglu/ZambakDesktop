@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="769.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
+   <top>
+      <HBox prefHeight="49.0" prefWidth="769.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="menuStockButton" mnemonicParsing="false" onAction="#menuStockClicked" prefHeight="50.0" prefWidth="123.0" text="Stok Listesi" />
+            <Button id="menuOrderButton" mnemonicParsing="false" onAction="#menuOrderClicked" prefHeight="50.0" prefWidth="111.0" text="Sipariş Listesi">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin></Button>
+            <Button fx:id="menuNewOrder" mnemonicParsing="false" onAction="#menuNewOrderClicked" prefHeight="49.0" prefWidth="100.0" text="Yeni Satış">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin></Button>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.YeniSatisController">
+   <items>
+        <GridPane prefHeight="900.0" prefWidth="500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="86.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="İsim Soyisim :">
+                    <GridPane.margin>
+                        <Insets left="20.0" />
+                    </GridPane.margin>
+                </Label>
+                <TextField fx:id="txtIsimSoyisim" promptText="İsim Soyisim Buraya Giriniz" GridPane.columnIndex="1" />
+                <Label fx:id="txtYeniSatisAdres" text="Adres :" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets left="20.0" />
+                    </GridPane.margin></Label>
+                <TextArea fx:id="txtAdres" prefHeight="200.0" prefWidth="200.0" promptText="Adresi buraya giriniz" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Telefon :" GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets left="20.0" />
+                    </GridPane.margin></Label>
+                <TextField fx:id="txtTelefon" promptText="5XX " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Ödeme Şekli :" GridPane.rowIndex="3">
+                    <GridPane.margin>
+                        <Insets left="20.0" />
+                    </GridPane.margin></Label>
+                <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="5.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <RadioButton fx:id="radioKapidaOdeme" mnemonicParsing="false" selected="true" text="Kapıda Ödeme" onAction="#kapidaOdemeAction"/>
+                        <RadioButton fx:id="radioEft" mnemonicParsing="false" text="Eft veya Havale" GridPane.columnIndex="1" onAction="#eftOdemeAction" />
+                        <RadioButton fx:id="radioEl" mnemonicParsing="false" text="Dükkan" GridPane.columnIndex="2" onAction="#eldenOdemeAction" />
+                    </children>
+                </GridPane>
+                <Label text="Sipariş Yeri :" GridPane.rowIndex="5">
+                    <GridPane.margin>
+                        <Insets left="20.0" />
+                    </GridPane.margin>
+                </Label>
+                <GridPane GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <RadioButton userData="1" fx:id="radioInstagram" mnemonicParsing="false" selected="true" text="Instagram" onAction="#kaynakAction" />
+                        <RadioButton userData="2" fx:id="radioFacebook" mnemonicParsing="false" text="Facebook" GridPane.columnIndex="1" onAction="#kaynakAction"/>
+                        <RadioButton userData="3" fx:id="radioWhatsapp" layoutX="228.0" layoutY="19.0" mnemonicParsing="false" text="Whatsapp" GridPane.rowIndex="1" onAction="#kaynakAction"/>
+                        <RadioButton userData="0" fx:id="radioSite" layoutX="10.0" layoutY="58.0" mnemonicParsing="false" text="Site" GridPane.columnIndex="1" GridPane.rowIndex="1" onAction="#kaynakAction"/>
+                    </children>
+                </GridPane>
+                <Label text="Sipariş Tarihi :" GridPane.rowIndex="6">
+                    <GridPane.margin>
+                        <Insets left="20.0" />
+                    </GridPane.margin>
+                </Label>
+                <DatePicker fx:id="datePickerSiparis" prefHeight="31.0" prefWidth="440.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <Label text="Ürün Fiyatı :" GridPane.rowIndex="7">
+                    <GridPane.margin>
+                        <Insets left="20.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label text="Kargo Ücreti :" GridPane.rowIndex="8">
+                    <GridPane.margin>
+                        <Insets left="20.0" />
+                    </GridPane.margin></Label>
+                <TextField fx:id="txtKargoUcreti" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                <TextField fx:id="txtUrunUcreti" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+                <Label text="Ülke :" GridPane.rowIndex="4">
+                    <GridPane.margin>
+                        <Insets left="20.0" />
+                    </GridPane.margin>
+                </Label>
+                <ComboBox fx:id="comboBoxCountry" prefHeight="31.0" prefWidth="445.0" promptText="Türkiye" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Tamamla">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></Button>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Temizle" />
+               </children>
+            </HBox>
+
+
+            </children>
+        </GridPane>
+        <BorderPane prefHeight="900.0" prefWidth="500.0" GridPane.columnIndex="1">
+            <top>
+                <VBox>
+                    <HBox alignment="CENTER_LEFT">
+                        <ComboBox fx:id="comboBoxBrand" promptText="Marka Seç" />
+                        <ComboBox fx:id="comboBoxCategory" promptText="Kategori Seç" />
+                        <ComboBox fx:id="comboBoxProduct" promptText="Ürün Seç" />
+                        <TextField fx:id="txtUrunAdet" prefHeight="31.0" prefWidth="77.0" promptText="Adet Gir" />
+                        <Button fx:id="btnUrunEkle" text="Ürün ekle" />
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT">
+                        <TextField fx:id="txtStringUrun" prefHeight="31.0" prefWidth="448.0" text="Ürünü yazın" />
+                        <Button fx:id="btnStringUrunEkle" prefHeight="31.0" prefWidth="81.0" text="Ekle" />
+                    </HBox>
+                </VBox>
+
+            </top>
+         <center>
+            <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn prefWidth="96.0" text="Marka Adı" />
+                <TableColumn prefWidth="111.0" text="Kategori Adı" />
+                <TableColumn prefWidth="83.0" text="Ürün Adı" />
+                <TableColumn prefWidth="79.0" text="Adet" />
+                <TableColumn prefWidth="192.0" text="Toplam Fiyat" />
+              </columns>
+            </TableView>
+         </center>
+
+        </BorderPane>
+
+    </items>
+</SplitPane>
